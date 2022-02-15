@@ -1,0 +1,33 @@
+.not-found-error{
+  text-align: center;
+}
+
+.not-found-error_font-size{
+  font-size: 105px;
+  text-align: center;
+}
+
+.not-found-error_explanation{
+  margin-top: 75px;
+}
+
+
+.not-found-error_details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.not-found-error_details_technical-details{
+  padding: 15px;
+  margin-top: 25px;
+  border: solid 1px black;
+  background-color: rgb(218, 214, 214);
+  border-radius: 4px;
+}
+
+.not-found-error_explanation_go-back{
+  margin-top: 75px;
+}

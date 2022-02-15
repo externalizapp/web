@@ -1,0 +1,10 @@
+<div class="sidebar-dock">
+
+    <div *ngFor="let item of dockItems">   
+            <a class="sidebar-dock_link"
+                routerLinkActive="sidebar-dock_link-active"
+                [routerLink]="this.doClick(item.label)" >
+            <fa-icon [icon]="item.icon" title="{{item.label | translate}}"></fa-icon>
+        </a>      
+    </div>
+</div>

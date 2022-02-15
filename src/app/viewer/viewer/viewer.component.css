@@ -1,0 +1,36 @@
+h2{
+    padding-left: 35%;
+}
+
+.viewer_back-link_container{
+    float: left;
+    padding-top: 1%;
+    margin-left: 2%;
+}
+
+.viewer_back-link{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.viewer_back-link:hover{
+    color: rgb(59, 59, 59);
+    text-decoration: none;
+}
+
+.viewer_external-links{
+    margin-left: 5px;
+}
+
+.viewer_contract-details-table{
+    text-align: center;
+    margin: 0 auto;
+    width: 30%;
+    min-width: 360px;
+    max-width: 500px;
+}
+
+.viewer_header-column{
+    font-weight: bold;
+}

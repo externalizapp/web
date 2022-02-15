@@ -1,0 +1,14 @@
+.sidebar-dock{
+    display: inline-flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.sidebar-dock_link{
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar-dock_link:hover{
+    color: rgb(59, 59, 59);
+}

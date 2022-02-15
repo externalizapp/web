@@ -1,0 +1,17 @@
+<div class="http-error">
+    <h1>{{'error.http.title' | translate }}</h1>
+    <fa-icon class="http-error_font-size" [icon]="faCarCrash"></fa-icon> 
+    <section class="http-error_explanation">
+        <p>            
+            {{'error.http.explanation.1' | translate }}
+        </p>
+    </section>
+    <section class="http-error_details" *ngIf="this.errorReceived">
+        <p>
+            {{'error.http.explanation.2' | translate }}
+        </p>
+        <div class="http-error_details_technical-details">   
+            {{this.errorReceived.message}}
+        </div>
+    </section>
+</div>

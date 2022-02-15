@@ -1,0 +1,8 @@
+<div class="results_container">
+    <h1>
+        {{'results.head' | translate}}: {{this.query}}
+    </h1>
+    <app-results-table 
+        *ngIf="this.contracts.length > 0"
+        [contracts]="this.contracts"></app-results-table>
+</div>

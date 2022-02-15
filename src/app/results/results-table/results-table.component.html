@@ -1,0 +1,99 @@
+<div class="results-table_outer">
+    
+    <p-table #results_table
+            *ngIf="this.contracts" 
+            [value]="this.contracts"
+            styleClass="results-table p-datatable-gridlines p-datatable-striped"
+            [columns]="this.columns"
+            [paginator]="true"
+            [rows]="15"
+            [showCurrentPageReport]="true"
+            [scrollable]="true" 
+            scrollHeight="flex"
+            responsiveLayout="scroll"
+            currentPageReportTemplate="{{'results.report.first' | translate}} 
+                                        {first} 
+                                        {{'results.report.second' | translate}} 
+                                        {last}. 
+                                        {{'results.report.third' | translate}}: {totalRecords} 
+                                        {{'results.report.fourth' | translate}}."
+            [rowsPerPageOptions]="[15,30,50]"
+            [globalFilterFields]="['titulo','poder_adjudicador','identificador_expediente','plataforma']">
+            <ng-template pTemplate="caption">
+                <div class="results-table_caption-explanation">
+                    {{ 'results.caption.explanation.1' | translate }} 
+                    <i class="pi pi-search-plus"></i> 
+                    {{ 'results.caption.explanation.2' | translate }}
+                </div>
+                <div class="results-table_caption-buttons">
+                    <div class="results-table_caption-buttons-left">
+                        <button type="button"   
+                                class="results-table_caption_button"
+                                (click)="results_table.exportCSV()" 
+                                title="{{'results.download.csv' | translate}}"
+                                pTooltip="{{'results.download.csv' | translate}}" 
+                                tooltipPosition="bottom"><i class="pi pi-file"></i>
+                        </button>
+                        <button type="button"   
+                                class="results-table_caption_button"
+                                (click)="this.exportExcel()" 
+                                title="{{'results.download.excel' | translate}}"
+                                pTooltip="{{'results.download.excel' | translate}}" 
+                                tooltipPosition="bottom"><i class="pi pi-file-excel"></i>
+                        </button>
+                        <button type="button"   
+                                class="results-table_caption_button"
+                                (click)="results_table.exportCSV({selectionOnly:true})" 
+                                title="{{'results.download.csv_filtered' | translate}}"   
+                                pTooltip="{{'results.download.csv_filtered' | translate}}" 
+                                tooltipPosition="bottom"><i class="pi pi-filter"></i>
+                        </button>
+                    </div>
+                    <div class="results-table_caption-buttons-right">
+                        <div>
+                            <button type="button"   
+                                    class="results-table_caption_button"
+                                    label="Clear"
+                                    (click)="clear(results_table)"  
+                                    title="{{'results.clean' | translate}}"                          
+                                    pTooltip="{{'results.clean' | translate}}" 
+                                    tooltipPosition="bottom"><i class="pi pi-filter-slash"></i>
+                            </button>
+                        </div>
+                        <div>
+                            <span class="p-input-icon-left ml-auto">
+                                <i class="pi pi-search"></i>
+                                <input pInputText type="text" (input)="this.doInput($event)" placeholder="{{'results.find' | translate}}" />
+                            </span>
+                        </div>
+                    </div>                    
+                </div>                
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th [pSortableColumn]="col.field" *ngFor="let col of this.columns">
+                        {{col.header}}
+                        <p-columnFilter type="text" [field]="col.field" display="menu"></p-columnFilter>
+                        <p-sortIcon [field]="col.field"></p-sortIcon>
+                    </th>
+                    <th class="results-table_caption_last-column"></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-contract>
+                <tr  style="height:40px">
+                    <td *ngFor="let col of this.columns">
+                            {{contract[col.field]}}
+                    </td>
+                    <td class="results-table_last-column">
+                        <button type="button" pButton pRipple 
+                                (click)="this.openContractInfo(contract['id_contrato'])"
+                                label="Visor"
+                                class="results-table_last-column_button"
+                                title="{{'results.view_contract' | translate}}"
+                                tooltipPosition="bottom"><i class="pi pi-search-plus"></i>
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+    </p-table>
+</div>

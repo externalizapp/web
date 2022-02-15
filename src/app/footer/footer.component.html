@@ -1,0 +1,13 @@
+<div class="footer">
+    <div class="footer_language">        
+        <p-dropdown 
+            dataKey="code"
+            [options]="this.languageList" 
+            [(ngModel)]="this.selectedLanguage" 
+            (onChange)="doChangeLanguage()" optionLabel="name">
+        </p-dropdown>
+        <fa-icon [icon]="faLanguage"></fa-icon> 
+    </div>
+    <app-sidebar class="footer_sidebar"></app-sidebar>
+    <a href="/" class="footer_link" title="{{'application.title' | translate}}">{{'application.title' | translate}}</a>
+</div>

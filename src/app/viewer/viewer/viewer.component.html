@@ -1,0 +1,70 @@
+<div>
+    <p class="viewer_back-link_container" *ngIf="this.backLink.length != -1">
+        <a class="viewer_back-link"
+        routerLinkActive="sidebar-dock_link-active"
+        (click)="this.doBackRouting()">
+            <fa-icon class="viewer_external-links" [icon]="faBackward"></fa-icon> 
+            {{'viewer.backToSearch' | translate}}
+        </a>              
+    </p>
+    <h1>
+        {{this.contract?.titulo}} ({{this.contract?.id_contrato}})
+    </h1>
+    <h2>
+        {{'viewer.details' | translate}} 
+    </h2>
+    <div class="viewer_contract-details-table">
+        <p-table [value]="this.contractData" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+            </ng-template>
+            <ng-template pTemplate="body" let-data>
+                <tr>
+                    <td class="viewer_header-column">{{data.field}}</td>
+                    <td *ngIf="data.isExternalLink">
+                        <a href="{{data.value}}" 
+                            target="_blank">{{data.value}}</a> 
+                                <fa-icon class="viewer_external-links" 
+                                    [icon]="faExternalLinkAlt">
+                                </fa-icon>
+                    </td>
+                    <td *ngIf="!data.isExternalLink">
+                        {{data.value}}
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+    <div *ngIf="this.adjudicationsData.length > 0">
+        <h2>
+            {{'viewer.adjudications' | translate }}
+        </h2>
+        <div class="viewer_contract-details-table">
+            <p-table [value]="this.adjudicationsData" responsiveLayout="scroll">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th [pSortableColumn]="col.field" *ngFor="let col of this.adjudicationsColumns">
+                            {{col.header}}                           
+                            <p-sortIcon [field]="col.field"></p-sortIcon>
+                        </th>
+                        <th class="results-table_caption_last-column"></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-data>
+                    <tr>
+                        <td>{{data.field}}</td>
+                        <td>{{data.value}}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>   
+
+    <div *ngIf="this.adjudicationsData.length == 0">
+        <h2 class="viewer_no-adjudications-title">
+            {{'viewer.no_adjudications' | translate }}
+        </h2>
+    </div>
+
+
+</div>

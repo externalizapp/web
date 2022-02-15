@@ -1,0 +1,16 @@
+<div class="search">
+    <span class="p-input-icon-right">        
+        <ng-container *ngIf="!this.isIdMode(); else idMode">
+            <i class="search-icon pi pi-search" (click)="this.performSearch()"></i>
+        </ng-container>
+        <ng-template #idMode>
+            <i class="search-icon pi pi-book" (click)="this.performVisor()"></i>
+        </ng-template>         
+        <input 
+            class="p-inputtext-lg"
+            type="text" 
+            pInputText placeholder="{{'search.find' | translate}}" 
+            (keyup.enter)="this.isIdMode()?this.performVisor():this.performSearch()"
+            [(ngModel)]="searchInput" />
+    </span>
+</div>

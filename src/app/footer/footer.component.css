@@ -1,0 +1,38 @@
+.footer{
+    padding-right: 2%;
+}
+
+.footer_language{
+    float: left;
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.footer_sidebar{
+    padding-left: calc(150px - 2%);
+}
+
+.footer_link{    
+    width: 150px;
+    float: right;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+}
+
+.footer_link:hover{
+    color: rgb(59, 59, 59);
+}
+
+:host ::ng-deep .p-dropdown {
+    background-color: white;
+    border: none;    
+}
+
+:host ::ng-deep .p-dropdown:active {
+    background-color: white;
+    border: none;    
+}
+
+

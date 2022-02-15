@@ -1,0 +1,12 @@
+<div class="not-found-error">
+  <h1>{{'error.404.title' | translate }}</h1>
+  <fa-icon class="not-found-error_font-size" [icon]="faExclamationTriangle"></fa-icon> 
+  <section class="not-found-error_explanation">
+      <p>            
+        {{ 'error.404.explanation.1' | translate }} <a href="/about"> {{ 'error.404.explanation.2' | translate }}</a>
+      </p>
+      <p class="not-found-error_explanation_go-back">
+        <a href="/">{{ 'error.404.explanation.3' | translate }}</a>
+      </p>
+  </section>
+</div>
