@@ -1,3 +1,11 @@
 .search-container-icon{
     cursor: pointer;
 }
+
+.search_show_all{
+    text-align: center;
+    margin-top: 10px;
+    font-size: smaller;
+    cursor: pointer;
+    color:blue;
+}

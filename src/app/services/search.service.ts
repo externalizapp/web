@@ -10,8 +10,9 @@ import { Config } from '../config';
 })
 export class SearchService {
   
-  private searchUrl: string = Config.SEARCH_URL;
-  private contractUrl: string = Config.VIEWER_URL;
+  private baseUrl: string = Config.API_HOST + ':' + Config.API_PORT + "/";
+  private searchUrl: string =  this.baseUrl + Config.SEARCH_URL;
+  private contractUrl: string = this.baseUrl + Config.VIEWER_URL;
 
   constructor(private http: HttpClient) { }
 
@@ -20,8 +21,12 @@ export class SearchService {
   }
 
   public querySearch(searchQuery: SearchQuery) : Observable<Array<Contrato>> {
-    // return this.http.get<SearchResponse>(this.configUrl, {params: searchQuery as any});
-    return this.http.get<Array<Contrato>>(this.searchUrl);
+    if (searchQuery.query.length == 0){
+      return this.http.get<Array<Contrato>>(this.searchUrl);
+    }else{
+      return this.http.get<Array<Contrato>>(this.searchUrl, {params: searchQuery as any});
+    }
+    // return this.http.get<Array<Contrato>>(this.searchUrl);
   }
 
   public queryContract(idContract: number) : Observable<Contrato> {

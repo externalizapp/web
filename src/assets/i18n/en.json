@@ -1,5 +1,6 @@
 {
     "search.find": "Find",
+    "search.all": "O ver todos los contratos",
     "sidebar.find": "Find",
     "sidebar.api": "API",
     "sidebar.about": "Acerca de...",
@@ -7,5 +8,5 @@
     "results.report.first": "Mostrando desde",
     "results.report.second": "hasta",
     "results.report.third": "total",
-    "results.report.fourth": "resultados"
+    "results.report.fourth": "resultados",
 }

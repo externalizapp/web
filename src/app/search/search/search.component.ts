@@ -20,12 +20,17 @@ export class SearchComponent implements OnInit {
     return this.searchInput.length > 0 && this.searchInput.charAt(0) === '#';
   }
 
-  performSearch() : void {
-    const searchQuery: SearchQuery = {
-      query: this.searchInput 
-    };
+  performSearch(showAll: boolean = false) : void {
+    if (!showAll){
+      const searchQuery: SearchQuery = {
+        query: this.searchInput 
+      };
+  
+      this.router.navigate(['/results'], { queryParams: searchQuery});
+    }else{
+      this.router.navigate(['/results']);
+    }
 
-    this.router.navigate(['/results'], { queryParams: searchQuery});
   }
 
   performVisor(): void {
