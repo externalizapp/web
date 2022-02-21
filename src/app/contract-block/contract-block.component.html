@@ -1,0 +1,22 @@
+<div class="contract_block">
+    <h2 class="contract_block_title">
+        <fa-icon [icon]="faFileSignature"></fa-icon> 
+        {{contract?.titulo}}
+    </h2>
+    <div>
+        <table class="contract_block_table">
+            <tr>
+                <!-- <td><fa-icon [icon]="faCalendarDay"></fa-icon> {{contract.fecha}}</td> -->
+                <!-- <td><fa-icon [icon]="faEuroSign"></fa-icon> {{contract.valor}} </td> -->
+                <td><fa-icon [icon]="faBuilding"></fa-icon> {{contract?.poder_adjudicador}} </td>
+                <td><fa-icon [icon]="faPaperclip"></fa-icon> {{contract?.plataforma}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="contract_block_details">
+        <fa-icon [icon]="faLink"></fa-icon>
+        <a class="contract_block_details__link" 
+            [href]="contract?.fuente" 
+            [title]="contract?.fuente">{{contract?.fuente}}</a>
+    </div>
+</div>

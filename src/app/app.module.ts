@@ -31,6 +31,9 @@ import { HttpErrorComponent } from './errors/http-error/http-error.component';
 import { GlobalHttpInterceptor } from './interceptors/global-http-interceptor.interceptor';
 import { StatsComponent } from './stats/stats.component';
 import { HeaderComponent } from './header/header.component';
+import {TabViewModule} from 'primeng/tabview';
+import { TabComponent } from './data/tab/tab.component';
+import { ContractBlockComponent } from './contract-block/contract-block.component';
 
 
 
@@ -43,7 +46,7 @@ import { HeaderComponent } from './header/header.component';
     SearchComponent,
     DataContainerComponent,
     SidebarComponent,
-    ViewerComponent, AboutComponent, ApiComponent, FooterComponent, ViewerContainerComponent, HttpErrorComponent, StatsComponent, HeaderComponent
+    ViewerComponent, AboutComponent, ApiComponent, FooterComponent, ViewerContainerComponent, HttpErrorComponent, StatsComponent, HeaderComponent, TabComponent, ContractBlockComponent
   ],
   imports: [
     AppRoutingModule,
@@ -57,6 +60,7 @@ import { HeaderComponent } from './header/header.component';
     HttpClientModule,
     InputTextModule,
     TableModule,
+    TabViewModule,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,

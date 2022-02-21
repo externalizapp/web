@@ -1,0 +1,23 @@
+.contract_block_table td:first-child{
+    padding-left: 0px;
+    padding-right: 15px;    
+}
+
+.contract_block_title{
+    font-size: 32px;
+}
+
+.contract_block_details{
+    margin-top: 20px;
+}
+
+.contract_block_details__link{
+    font-size: 23px;
+    margin-left: 10px;
+}
+
+.contract_block_table td{
+    font-size: 23px;
+    padding-left: 15px;
+    padding-right: 15px;    
+}

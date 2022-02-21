@@ -12,12 +12,21 @@ export class SearchService {
   
   private baseUrl: string = Config.API_HOST + ':' + Config.API_PORT + "/";
   private searchUrl: string =  this.baseUrl + Config.SEARCH_URL;
+  private retrieveByDateUrl: string =  this.baseUrl + Config.SEARCH_URL;
   private contractUrl: string = this.baseUrl + Config.VIEWER_URL;
 
   constructor(private http: HttpClient) { }
 
   private replaceParameter(url: string, key: string, value: string): string{
     return url.replace("{"+key+"}",value);
+  }
+
+  public retriveByDate() : Observable<Array<Contrato>> {   
+    return this.http.get<Array<Contrato>>(this.retrieveByDateUrl); 
+  }
+
+  public retriveByAmount() : Observable<Array<Contrato>> {   
+    return this.http.get<Array<Contrato>>(this.retrieveByDateUrl); 
   }
 
   public querySearch(searchQuery: SearchQuery) : Observable<Array<Contrato>> {
