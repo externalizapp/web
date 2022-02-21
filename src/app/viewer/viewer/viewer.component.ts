@@ -1,10 +1,13 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { Adjudicacion } from 'src/app/models/adjudicacion.model';
-import { Contrato } from 'src/app/models/contrato.model';
+
+
 import { faExternalLinkAlt, faBackward } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
-import { NavigationService } from 'src/app/services/navigation.service';
+
 import {Location} from '@angular/common';
+import { Adjudicacion } from '../../models/adjudicacion.model';
+import { NavigationService } from '../../services/navigation.service';
+import { Contrato } from '../../models/contrato.model';
 
 
 interface DataRow{

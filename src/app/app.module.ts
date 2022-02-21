@@ -11,12 +11,12 @@ import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
 
 import { AppComponent } from './app.component';
-import { SearchComponent } from './search/search/search.component';
+import { SearchComponent } from './search/search.component';
 
 import { ResultsComponent } from './results//results.component';
 import { ResultsTableComponent } from './results/results-table/results-table.component';
 import { PageNotFoundComponentComponent } from './errors/page-not-found-component/page-not-found-component.component';
-import { SearchContainerComponent } from './search/search-container.component';
+import { DataContainerComponent } from './data/data-container.component';
 import { SidebarComponent } from './footer/sidebar/sidebar.component';
 import { ViewerComponent } from './viewer/viewer/viewer.component';
 import { AboutComponent } from './about/about.component';
@@ -41,7 +41,7 @@ import { HeaderComponent } from './header/header.component';
     ResultsTableComponent,
     PageNotFoundComponentComponent,
     SearchComponent,
-    SearchContainerComponent,
+    DataContainerComponent,
     SidebarComponent,
     ViewerComponent, AboutComponent, ApiComponent, FooterComponent, ViewerContainerComponent, HttpErrorComponent, StatsComponent, HeaderComponent
   ],

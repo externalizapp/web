@@ -1,5 +1,5 @@
 import { AboutComponent } from './about/about.component';
-import { SearchContainerComponent } from './search/search-container.component';
+import { DataContainerComponent } from './data/data-container.component';
 import { ResultsGuardGuard } from './guards/results-guard.guard';
 import { GlobalHttpInterceptorGuard } from './guards/global-http-interceptor.guard';
 import { PageNotFoundComponentComponent } from './errors/page-not-found-component/page-not-found-component.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'api', component: ApiComponent },
   { path: 'about', component: AboutComponent },
   { path: 'httperror', component: HttpErrorComponent, canActivate: [GlobalHttpInterceptorGuard] },
-  { path: '', component: SearchContainerComponent },
+  { path: '', component: DataContainerComponent },
   { path: '**', component: PageNotFoundComponentComponent }
 ];
 
