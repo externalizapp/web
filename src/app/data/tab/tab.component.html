@@ -1,17 +1,19 @@
-<p-tabView (onChange)="handleChange($event)">
-    <p-tabPanel header="Recientes" leftIcon="pi-euro">
-        <div>           
-            <app-contract-block *ngFor="let contract in this.contracts" [contract]="contract"></app-contract-block>   
-        </div>
-    </p-tabPanel>
-    <p-tabPanel header="Cantidad">
-        <div>           
-            <app-contract-block *ngFor="let contract in this.contracts" [contract]="contract"></app-contract-block>   
-        </div>
-    </p-tabPanel>
-    <p-tabPanel header="Todos">
-        <div>           
-            <app-contract-block *ngFor="let contract in this.contracts" [contract]="contract"></app-contract-block>           
-        </div>
-    </p-tabPanel>
-</p-tabView>
+<div class="tabInfo__container">
+    <p-tabView  (onChange)="handleChange($event)">
+        <p-tabPanel header="Recientes" leftIcon="pi-euro">
+            <div class="tabInfo">           
+                <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>   
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Cantidad">
+            <div>           
+                <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>   
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Todos">
+            <div>           
+                <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>           
+            </div>
+        </p-tabPanel>
+    </p-tabView>
+</div>
