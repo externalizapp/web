@@ -12,6 +12,17 @@
     width: 100%;  
 }
 
+.app-container_header{  
+    padding-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+    font-weight: bolder;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
 .app-container_footer{  
     padding-top: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;

@@ -29,6 +29,8 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpErrorComponent } from './errors/http-error/http-error.component';
 import { GlobalHttpInterceptor } from './interceptors/global-http-interceptor.interceptor';
+import { StatsComponent } from './stats/stats.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -41,7 +43,7 @@ import { GlobalHttpInterceptor } from './interceptors/global-http-interceptor.in
     SearchComponent,
     SearchContainerComponent,
     SidebarComponent,
-    ViewerComponent, AboutComponent, ApiComponent, FooterComponent, ViewerContainerComponent, HttpErrorComponent
+    ViewerComponent, AboutComponent, ApiComponent, FooterComponent, ViewerContainerComponent, HttpErrorComponent, StatsComponent, HeaderComponent
   ],
   imports: [
     AppRoutingModule,

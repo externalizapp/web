@@ -1,0 +1,30 @@
+.stat{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 10vh;
+    padding-left : 20px;
+}
+.stat__card{
+    display: flex;
+}
+
+.stat__card__icon{
+   font-size: 50px;
+}
+
+.stat__card__text{
+    text-align: center;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.stat__card__text--eur{
+    margin-left: 19px;
+}
+
+.stat__card__key{
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 6px;
+}
