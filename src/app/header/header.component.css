@@ -1,3 +1,14 @@
 .header_container{
     text-align: left;
+    display: flex;
+}
+
+.stats{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    row-gap: 10vh;
+    padding-right : 20px;
+    margin-left: auto;
+    align-items: center;
 }
