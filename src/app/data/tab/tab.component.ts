@@ -10,6 +10,7 @@ import { SearchService } from '../../services/search.service';
 })
 export class TabComponent implements OnInit {
 
+  public currentIndex: number = 0;
   private dateSubscription: Subscription | undefined;
   private amountSubscription: Subscription | undefined;
   
@@ -18,6 +19,7 @@ export class TabComponent implements OnInit {
   constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
+    this.loadTab();
   }
 
   ngOnDestroy(): void {
@@ -29,13 +31,16 @@ export class TabComponent implements OnInit {
     }
   }
 
-  handleChange(e: any) {
-    if (e.index == 0){
+  loadTab(): void {
+    if (this.currentIndex == 0){
       this.doRetrieveByDate();
     }else{
       this.doRetrieveByAmount();
     }
-    
+  }
+
+  handleChange(e: any) {
+    this.currentIndex = e.index;
   }
 
   private doRetrieveByDate(): void {    

@@ -1,3 +1,4 @@
-.tabInfo__container{
-    
+.tabInfo{
+    height: 70vh;
+    overflow-y: scroll;
 }

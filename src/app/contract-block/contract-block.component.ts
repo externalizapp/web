@@ -6,6 +6,7 @@ import { faFileSignature,
          faBuilding,
          faPaperclip,
          faLink } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contract-block',
@@ -22,9 +23,13 @@ export class ContractBlockComponent implements OnInit {
 
   @Input() contract: Contrato | undefined = undefined;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  public doViewContract(): void{
+    this.router.navigate(['/view'], { queryParams: {'idContract': this.contract?.id_contrato}});
   }
 
 }

@@ -1,17 +1,17 @@
 <div class="tabInfo__container">
-    <p-tabView  (onChange)="handleChange($event)">
-        <p-tabPanel header="Recientes" leftIcon="pi-euro">
+    <p-tabView [style]="{'height':'200px'}" (onChange)="handleChange($event)">
+        <p-tabPanel header="Recientes" leftIcon="pi-euro" [selected]="this.currentIndex == 0">
             <div class="tabInfo">           
                 <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>   
             </div>
         </p-tabPanel>
-        <p-tabPanel header="Cantidad">
-            <div>           
+        <p-tabPanel header="Cantidad" [selected]="this.currentIndex == 1">
+            <div class="tabInfo">           
                 <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>   
             </div>
         </p-tabPanel>
-        <p-tabPanel header="Todos">
-            <div>           
+        <p-tabPanel header="Todos" [selected]="this.currentIndex == 2">
+            <div class="tabInfo">           
                 <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>           
             </div>
         </p-tabPanel>
