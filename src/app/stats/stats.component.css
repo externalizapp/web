@@ -1,16 +1,15 @@
-.stat{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    row-gap: 10vh;
-    padding-left : 20px;
+.stats__cards{
+    margin-left: auto;
+    display: flex;    
 }
+
 .stat__card{
     display: flex;
 }
 
 .stat__card__icon{
-   font-size: 50px;
+   font-size: 23px;
+   margin-right: 10px;
 }
 
 .stat__card__text{
@@ -24,7 +23,9 @@
 }
 
 .stat__card__key{
-    font-weight: bold;
-    font-size: 25px;
+    display: inline-block;
+    font-size: 12px;
     margin-bottom: 6px;
+    margin-right: 7px;
+    margin-left: 7px;
 }
