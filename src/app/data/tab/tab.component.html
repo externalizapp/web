@@ -1,18 +1,30 @@
 <div class="tabInfo__container">
     <p-tabView [style]="{'height':'200px'}" (onChange)="handleChange($event)">
-        <p-tabPanel header="Recientes" leftIcon="pi-euro" [selected]="this.currentIndex == 0">
+        <p-tabPanel header="Más recientes" leftIcon="pi-euro" [selected]="this.currentIndex == 0">
             <div class="tabInfo">           
                 <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>   
             </div>
         </p-tabPanel>
-        <p-tabPanel header="Cantidad" [selected]="this.currentIndex == 1">
+        <p-tabPanel header="Mayor cantidad" [selected]="this.currentIndex == 1">
             <div class="tabInfo">           
                 <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>   
             </div>
         </p-tabPanel>
         <p-tabPanel header="Todos" [selected]="this.currentIndex == 2">
             <div class="tabInfo">           
-                <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>           
+                <p-accordion>
+                    <p-accordionTab header="Filtrar contratos">  
+                        <app-filter></app-filter>
+                    </p-accordionTab>
+                    <p-accordionTab header="Descargar todos los contratos">
+                        <div>
+                            <button pButton type="button" label="Descargar todos los contratos (.csv)" ></button>           
+                        </div>
+                        <div class="tabInfo__download_buttons">
+                            <button pButton type="button" label="Descargar todos los contratos (Excel)" ></button>            
+                        </div>
+                    </p-accordionTab> 
+                </p-accordion>         
             </div>
         </p-tabPanel>
     </p-tabView>

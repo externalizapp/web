@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { Contrato } from '../../models/contrato.model';
 import { SearchService } from '../../services/search.service';
 
+
+
 @Component({
   selector: 'app-tab',
   templateUrl: './tab.component.html',
@@ -10,13 +12,14 @@ import { SearchService } from '../../services/search.service';
 })
 export class TabComponent implements OnInit {
 
+
   public currentIndex: number = 0;
   private dateSubscription: Subscription | undefined;
   private amountSubscription: Subscription | undefined;
   
   public contracts: Array<Contrato> | undefined;
 
-  constructor(private searchService: SearchService) { }
+  constructor(private searchService: SearchService) {  }
 
   ngOnInit(): void {
     this.loadTab();

@@ -32,8 +32,15 @@ import { GlobalHttpInterceptor } from './interceptors/global-http-interceptor.in
 import { StatsComponent } from './stats/stats.component';
 import { HeaderComponent } from './header/header.component';
 import {TabViewModule} from 'primeng/tabview';
+import {AccordionModule} from 'primeng/accordion';
 import { TabComponent } from './data/tab/tab.component';
 import { ContractBlockComponent } from './contract-block/contract-block.component';
+import {SliderModule} from 'primeng/slider';
+import {CalendarModule} from 'primeng/calendar';
+import {ListboxModule} from 'primeng/listbox';
+import {ButtonModule} from 'primeng/button';
+import { FilterComponent } from './filter/filter.component';
+
 
 
 
@@ -46,12 +53,15 @@ import { ContractBlockComponent } from './contract-block/contract-block.componen
     SearchComponent,
     DataContainerComponent,
     SidebarComponent,
-    ViewerComponent, AboutComponent, ApiComponent, FooterComponent, ViewerContainerComponent, HttpErrorComponent, StatsComponent, HeaderComponent, TabComponent, ContractBlockComponent
+    ViewerComponent, AboutComponent, ApiComponent, FooterComponent, ViewerContainerComponent, HttpErrorComponent, StatsComponent, HeaderComponent, TabComponent, ContractBlockComponent, FilterComponent
   ],
   imports: [
+    AccordionModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    ButtonModule,
+    CalendarModule,
     DockModule,
     DropdownModule,
     FileSaverModule,
@@ -59,6 +69,7 @@ import { ContractBlockComponent } from './contract-block/contract-block.componen
     FormsModule,
     HttpClientModule,
     InputTextModule,
+    ListboxModule,
     TableModule,
     TabViewModule,
     TranslateModule.forRoot({
@@ -67,7 +78,8 @@ import { ContractBlockComponent } from './contract-block/contract-block.componen
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
-  })    
+  }),
+  SliderModule
   ],
   providers: [
     {

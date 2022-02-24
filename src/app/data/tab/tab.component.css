@@ -2,3 +2,7 @@
     height: 70vh;
     overflow-y: scroll;
 }
+
+.tabInfo__download_buttons{
+    margin-top: 2%;
+}

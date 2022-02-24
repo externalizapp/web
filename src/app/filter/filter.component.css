@@ -1,0 +1,31 @@
+.filter{
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+}
+
+.filter__second_column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 90%;
+}
+
+.filter__second_column__button{
+    margin-top: 5%;
+}
+
+.filter__element{
+    margin-bottom: 3%;
+}
+
+.filter__range{
+    width: 100%;
+    margin-bottom: 6%;
+}
+
+.filter__range__h3{
+    width: 100%;
+    margin-bottom: 3%;
+}

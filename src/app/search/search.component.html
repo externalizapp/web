@@ -13,9 +13,4 @@
             (keyup.enter)="this.isIdMode()?this.performVisor():this.performSearch()"
             [(ngModel)]="searchInput" />
     </span>
-    <div class="search_show_all">
-        <p>
-            <a (click)="this.performSearch()" title="{{'search.all' | translate }}">{{'search.all' | translate }}</a> 
-        </p>
-    </div>
 </div>

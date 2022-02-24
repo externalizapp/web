@@ -1,0 +1,29 @@
+<div class="filter">
+    <div class="filter__element">
+        <p-listbox [options]="this.poderesAdjudicadores" [(ngModel)]="this.selectedPoderAdjudicador" 
+            [metaKeySelection]="false" 
+            [checkbox]="true"
+            [filter]="true" 
+            [multiple]="true" 
+            optionLabel="nombre" [listStyle]="{'max-height':'250px'}" [style]="{'width':'15rem'}">
+            <ng-template let-poder pTemplate="item">
+                <div class="poder-item">
+                <div>{{poder.nombre}}</div>
+                </div>
+            </ng-template>
+        </p-listbox>
+    </div>
+    <div class="filter__second_column">
+        <div class="filter__element filter__range">
+            <h3 class="filter__range__h3">Cantidad: {{rangeValues[0] + '€ - ' + rangeValues[1] + '€'}}</h3>                     
+            <p-slider [(ngModel)]="rangeValues" [range]="true"></p-slider>
+        </div>
+        <div class="filter__element">
+            <h3 class="filter__range__h3">Intervalo de fechas</h3>    
+            <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true" inputId="range"></p-calendar>
+        </div>  
+        <div class="filter__second_column__button">
+            <button pButton type="button" label="Filtrar" ></button>
+        </div>
+    </div>
+</div>

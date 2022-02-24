@@ -7,11 +7,3 @@
 .search-container-icon{
     cursor: pointer;
 }
-
-.search_show_all{
-    margin-left: 2%;
-    text-align: center; 
-    font-size: smaller;
-    cursor: pointer;
-    color:blue;
-}
