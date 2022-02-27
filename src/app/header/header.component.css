@@ -11,3 +11,14 @@
     margin-left: auto;
     align-items: center;
 }
+
+@media screen and (max-width: 580px) {
+    .stats{
+        display: none;
+        visibility: hidden;
+    }
+    .header_container{
+        text-align: center;
+        justify-content: center;
+    }
+}
