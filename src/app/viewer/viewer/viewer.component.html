@@ -1,12 +1,4 @@
 <div>
-    <p class="viewer_back-link_container" *ngIf="this.backLink.length != -1">
-        <a class="viewer_back-link"
-        routerLinkActive="sidebar-dock_link-active"
-        (click)="this.doBackRouting()">
-            <fa-icon class="viewer_external-links" [icon]="faBackward"></fa-icon> 
-            {{'viewer.backToSearch' | translate}}
-        </a>              
-    </p>
     <h1>
         {{this.contract?.titulo}} ({{this.contract?.id_contrato}})
     </h1>

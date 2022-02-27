@@ -1,16 +1,16 @@
 <div class="tabInfo__container">
     <p-tabView [style]="{'height':'200px'}" (onChange)="handleChange($event)">
-        <p-tabPanel header="Más recientes" leftIcon="pi-euro" [selected]="this.currentIndex == 0">
+        <p-tabPanel header="Más recientes" [selected]="this.currentIndex == tabModeEnum.DATE">
             <div class="tabInfo">           
                 <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>   
             </div>
         </p-tabPanel>
-        <p-tabPanel header="Mayor cantidad" [selected]="this.currentIndex == 1">
+        <p-tabPanel header="Mayor cantidad" [selected]="this.currentIndex == tabModeEnum.QUANTITY">
             <div class="tabInfo">           
                 <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>   
             </div>
         </p-tabPanel>
-        <p-tabPanel header="Todos" [selected]="this.currentIndex == 2">
+        <p-tabPanel header="Todos" [selected]="this.currentIndex == tabModeEnum.ALL">
             <div class="tabInfo">           
                 <p-accordion>
                     <p-accordionTab header="Filtrar contratos">  
@@ -26,6 +26,24 @@
                     </p-accordionTab> 
                 </p-accordion>         
             </div>
+        </p-tabPanel>
+        <p-tabPanel [selected]="this.currentIndex == this.tabModeEnum.SEARCH"
+                    *ngIf="this.searchQuery?.query"
+                    [header]="'Búsqueda: ' + this.searchQuery?.query"
+                    >
+                    <div *ngIf="this.contracts && this.contracts.length > 0;">
+                        <app-contract-block *ngFor="let contract of this.contracts" [contract]="contract"></app-contract-block>  
+                    </div>
+                    <div *ngIf="!this.contracts || this.contracts.length == 0;">
+                        <p>
+                            No se han encontrado contratos que cumplan con el criterio de búsqueda.
+                        </p>                      
+                    </div>
+        </p-tabPanel>
+        <p-tabPanel [selected]="this.currentIndex == this.tabModeEnum.CONTRACT"
+                    *ngIf="this.idContract"
+                    [header]="'Contrato: ' + this.idContract">
+            <app-viewer-container></app-viewer-container>
         </p-tabPanel>
     </p-tabView>
 </div>

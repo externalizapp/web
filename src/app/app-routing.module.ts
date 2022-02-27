@@ -5,15 +5,13 @@ import { GlobalHttpInterceptorGuard } from './guards/global-http-interceptor.gua
 import { PageNotFoundComponentComponent } from './errors/page-not-found-component/page-not-found-component.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ResultsComponent } from './results/results.component';
-import { ViewerContainerComponent } from './viewer/viewer-container.component';
 import { ApiComponent } from './api/api.component';
 import { HttpErrorComponent } from './errors/http-error/http-error.component';
 
 
 const routes: Routes = [
-  { path: 'results', component: ResultsComponent, canActivate: [ResultsGuardGuard] },
-  { path: 'view', component: ViewerContainerComponent },
+  { path: 'results', component: DataContainerComponent, canActivate: [ResultsGuardGuard] },
+  { path: 'view', component: DataContainerComponent },
   { path: 'api', component: ApiComponent },
   { path: 'about', component: AboutComponent },
   { path: 'httperror', component: HttpErrorComponent, canActivate: [GlobalHttpInterceptorGuard] },
